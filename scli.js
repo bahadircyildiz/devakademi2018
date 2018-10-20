@@ -104,19 +104,13 @@ var result = [];
 var commandList = __webpack_require__(/*! ./src/commandList.js */ "./app/src/commandList.js")(result);
 
 program.version(version).description(description);
-commandList.forEach(function (_ref) {
-  var command = _ref.command,
-      option = _ref.option;
-  program.command(command);
-  option.forEach(function (_ref2) {
-    var tags = _ref2.tags,
-        description = _ref2.description,
-        action = _ref2.action;
-    return program.option(tags, description, action);
+commandList.forEach(function (cL) {
+  program.command(cL.command);
+  cL.options.forEach(function (o) {
+    return program.option(o.tags, o.description, o.action);
   });
 });
-program.parse(process.argv);
-console.info(result);
+program.parse(process.argv); // console.info(result);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/process/browser.js */ "./node_modules/process/browser.js")))
 
 /***/ }),
@@ -170,7 +164,7 @@ module.exports = function (result) {
 
   return [{
     command: "ads",
-    option: [{
+    options: [{
       tags: "-id, --id <id>",
       description: "Find ad by ID",
       command: function command(id) {
@@ -4495,4 +4489,4 @@ module.exports = {"name":"devakademi2018","version":"0.0.1","description":"Devak
 /***/ })
 
 /******/ });
-//# sourceMappingURL=app.bundle.js.map
+//# sourceMappingURL=scli.js.map

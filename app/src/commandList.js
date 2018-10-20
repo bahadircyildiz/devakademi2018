@@ -3,7 +3,7 @@ module.exports = function(result){
     return [
         {
             command: "ads",
-            option:[
+            options:[
                 {
                     tags: "-id, --id <id>",
                     description: "Find ad by ID",

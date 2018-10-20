@@ -5,8 +5,8 @@ module.exports = {
     mode: process.env.NODE_ENV ? process.env.NODE_ENV: 'development',
     entry: path.resolve(__dirname, 'app')+"/index.js",
     output: {
-        path: path.resolve(__dirname, "dist"),
-        filename: 'app.bundle.js',
+        path: path.resolve(__dirname),
+        filename: 'scli.js',
         publicPath: '/'
     },
     devtool: 'source-map',
