@@ -1,17 +1,19 @@
-import program from "commander"
-import {main} from "./src/main.js"
-import CommandList from "./src/commandList.js"
-let {version, description} = require('../package.json');
+const program = require("commander")
+const {version, description} = require('../package.json')
+let result = [];
+let commandList = require("./src/commandList.js")(result)
 
 program
     .version(version)
     .description(description)
 
-commandList.forEach(cL => {
-    program
-        .command(cL.command)
-        .option(cL.option.tags, cL.option.description)
-        .action(a);
+commandList.forEach(({command, option}) => {
+    program.command(command)
+    option.forEach(({tags, description, action}) => 
+        program.option(tags, description, action)
+        )
 });
 
 program.parse(process.argv);
+
+console.info(result);
