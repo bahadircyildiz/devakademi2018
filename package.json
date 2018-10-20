@@ -1,0 +1,26 @@
+{
+  "name": "devakademi2018",
+  "version": "0.0.1",
+  "description": "Devakademi Entree Project, CLI app for sahibinden.",
+  "main": "dist/app.bundle.js",
+  "repository": "https://github.com/bahadircyildiz/devakademi2018.git",
+  "author": "Bahadir Can Yildiz <bahadircyildiz@yandex.com>",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "babel-loader": "^8.0.4",
+    "commander": "^2.19.0",
+    "gulp": "^3.9.1",
+    "inquire": "^0.4.8",
+    "rimraf": "^2.6.2",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "webpack": "^4.21.0",
+    "webpack-cli": "^3.1.2"
+  },
+  "scripts": {
+    "start": "node dist/app.bundle.js",
+    "webpack": "webpack"
+  }
+}
